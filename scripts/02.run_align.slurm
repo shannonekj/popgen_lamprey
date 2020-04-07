@@ -17,17 +17,17 @@ start=`date +%s`
 echo "My SLURM_JOB_ID: $SLURM_JOB_ID"
 
 ###  SETUP  ###
-proj="DS_history"
-fq_prefix="Ht"
-lib_prefix="BMAG0"
+proj="popgen_lamprey"
+fq_prefix="Ht" # You'll have to CHANGE this
+lib_prefix="BMAG0" # CHANGE
 
-# directories
-script_dir="/home/sejoslin/git_repos/${proj}/scripts"
-data_dir="/group/millermrgrp2/shannon/projects/${proj}/data"
-out_dir="${data_dir}/10X_alignments"
+# directories 
+script_dir="/home/sejoslin/git_repos/${proj}/scripts" # CHANGE
+data_dir="/group/millermrgrp2/shannon/projects/${proj}/data" # CHANGE
+out_dir="${data_dir}/10X_alignments" # CHANGE
 
 # files
-reference="/group/millermrgrp2/shannon/projects/genome_Hypomesus-transpacificus/data/04-supernova_out/60x/A/Hypomesus-transpacificus_10X_F_A.pseudohap2.1.fasta"
+reference="/group/millermrgrp2/shannon/projects/genome_Hypomesus-transpacificus/data/04-supernova_out/60x/A/Hypomesus-transpacificus_10X_F_A.pseudohap2.1.fasta" # CHANGE
 
 
 #############
@@ -35,8 +35,8 @@ reference="/group/millermrgrp2/shannon/projects/genome_Hypomesus-transpacificus/
 #############
 
 # index reference genome
-#bwa index ${reference}
-#sleep 1m
+bwa index ${reference}
+sleep 1m
 
 # Make list of individuals
 mkdir -p ${out_dir}
