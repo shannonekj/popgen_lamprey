@@ -1,9 +1,9 @@
 #!/bin/bash -l
-#SBATCH --mail-user=sejoslin@ucdavis.edu
+#SBATCH --mail-user=gmauringer@ucdavis.edu
 #SBATCH --mail-type=ALL
 #SBATCH -J alignRAD
-#SBATCH -e slurm/01.run_align.j%j.err
-#SBATCH -o slurm/01.run_align.j%j.out
+#SBATCH -e /home/auringer/scripts_USE/err_out/01.run_align.j%j.err
+#SBATCH -o /home/auringer/scripts_USE/err_out/01.run_align.j%j.out
 #SBATCH -c 20
 #SBATCH -p high
 #SBATCH --time=04:00:00
@@ -18,16 +18,16 @@ echo "My SLURM_JOB_ID: $SLURM_JOB_ID"
 
 ###  SETUP  ###
 proj="popgen_lamprey"
-fq_prefix="Ht" # You'll have to CHANGE this
+fq_prefix="Pz" # You'll have to CHANGE this
 lib_prefix="BMAG0" # CHANGE
 
 # directories 
-script_dir="/home/sejoslin/git_repos/${proj}/scripts" # CHANGE
-data_dir="/group/millermrgrp2/shannon/projects/${proj}/data" # CHANGE
-out_dir="${data_dir}/10X_alignments" # CHANGE
+script_dir="/home/auringer/${proj}/scripts" # CHANGE
+data_dir="/home/auringer/data/" # CHANGE
+out_dir="${data_dir}/01_sealamprey_alignment" # CHANGE
 
 # files
-reference="/group/millermrgrp2/shannon/projects/genome_Hypomesus-transpacificus/data/04-supernova_out/60x/A/Hypomesus-transpacificus_10X_F_A.pseudohap2.1.fasta" # CHANGE
+reference="/home/auringer/sealampreygenome/GCA_010993605.1_kPetMar1.pri_genomic.fna.gz" # CHANGE
 
 
 #############
