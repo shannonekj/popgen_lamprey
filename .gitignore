@@ -1,6 +1,7 @@
 # forget everything below!
 
 # don't save large sequence files to GitHub
+# don't save bulky alignment output files to GitHub
 data/*
 align/*
 
