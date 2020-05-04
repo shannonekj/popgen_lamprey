@@ -2,8 +2,8 @@
 #SBATCH --mail-user=gmauringer@ucdavis.edu
 #SBATCH --mail-type=ALL
 #SBATCH -J alignRAD
-#SBATCH -e /home/auringer/scripts_USE/err_out/01.run_align.j%j.err
-#SBATCH -o /home/auringer/scripts_USE/err_out/01.run_align.j%j.out
+#SBATCH -e /home/auringer/scripts/err_out/01.run_align.j%j.err
+#SBATCH -o /home/auringer/scripts/err_out/01.run_align.j%j.out
 #SBATCH -c 20
 #SBATCH -p high
 #SBATCH --time=04:00:00
@@ -23,11 +23,11 @@ lib_prefix="BMAG0" # CHANGE
 
 # directories 
 script_dir="/home/auringer/${proj}/scripts" # CHANGE
-data_dir="/home/auringer/data/" # CHANGE
-out_dir="${data_dir}/01_sealamprey_alignment" # CHANGE
+data_dir="/home/auringer/${proj}/data" # CHANGE
+out_dir="/home/auringer/${proj}/align/01_sealamprey_alignment" # CHANGE
 
 # files
-reference="/home/auringer/sealampreygenome/GCA_010993605.1_kPetMar1.pri_genomic.fna.gz" # CHANGE
+reference="/home/auringer/projects/lamprey2019/sealampreygenome/GCA_010993605.1_kPetMar1.pri_genomic.fna.gz" # CHANGE
 
 
 #############
@@ -67,7 +67,6 @@ done
 
 # submit list to launch align scripts
 bash ${script_dir}/align_2019.sh ${out_dir}/list ${reference} ${out_dir}
-
 
 
 end=`date +%s`
